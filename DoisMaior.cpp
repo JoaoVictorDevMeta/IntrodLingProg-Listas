@@ -3,8 +3,7 @@
 using namespace std;
 
 int main(){
-    vector<int> numss;
-    int t;
+    int t, maio1=-1000000,maio2=-1000000;
 
     while(true){
         cin >> t;
@@ -12,13 +11,17 @@ int main(){
             break;
         }
 
-        numss.push_back(t);
+        if(t > maio1){
+            maio2 = maio1;
+            maio1 = t;
+        } else if(t > maio2){
+            maio2 = t;
+        }
+
     }
 
-    sort(numss.begin(), numss.end());
-
-    cout << "Maior: " << numss[numss.size()-1] << endl;
-    cout << "Segundo maior: " << numss[numss.size()-2] << endl;
-
+    cout << "Maior: " << maio1<< endl;
+    cout << "Segundo maior: " << maio2 << endl;
+    
     return 0;
 }
