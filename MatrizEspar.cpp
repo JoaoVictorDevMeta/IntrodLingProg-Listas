@@ -2,41 +2,40 @@
 
 using namespace std;
 
-bool EspaMat(double mtz[10][10],int m, int n){
-    int cont=0;
+bool EspaMat(double mtz[10][10], int m, int n){
+    int cont = 0;
 
-    for(int i = 0; i < 10; i++){
-        for(int j = 0; j <10; j++){
+    for(int i = 0; i < m; i++){
+        for(int j = 0; j < n; j++){
             if(mtz[i][j] == 0){
                 cont++;
             }
         }
     }
 
-    if((m*n*0.7) < cont){
-        return false;
+    if(cont > (m * n * 0.7)){
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 int main(){
-    double x,y;
+    int x, y; 
     double mtz[10][10];
 
-    cin >> x;
-    cin >> y;
+    cin >> x >> y;
 
     for(int i = 0; i < x; i++){
-        for(int j=0; j < y; j++){
+        for(int j = 0; j < y; j++){
             cin >> mtz[i][j];
         }
     }
 
-    if(EspaMat(mtz, x,y)){
-        cout << "A matriz não é esparsa" << endl;
-    }else {
+    if(EspaMat(mtz, x, y)){
         cout << "A matriz é esparsa" << endl;
+    } else {
+        cout << "A matriz não é esparsa" << endl;
     }
 
     return 0;
