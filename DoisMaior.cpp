@@ -16,12 +16,12 @@ int main(){
             maio1 = t;
         } else if(t > maio2){
             maio2 = t;
-        }
+        }   
 
     }
 
     cout << "Maior: " << maio1<< endl;
     cout << "Segundo maior: " << maio2 << endl;
-    
+
     return 0;
 }
