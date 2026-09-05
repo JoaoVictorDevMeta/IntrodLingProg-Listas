@@ -13,7 +13,7 @@ bool EspaMat(double mtz[10][10],int m, int n){
         }
     }
 
-    if((m*n*0.7) >= cont){
+    if((m*n*0.7) < cont){
         return false;
     }
 
@@ -28,7 +28,7 @@ int main(){
     cin >> y;
 
     for(int i = 0; i < x; i++){
-        for(int j=0; j < y; i++){
+        for(int j=0; j < y; j++){
             cin >> mtz[i][j];
         }
     }
