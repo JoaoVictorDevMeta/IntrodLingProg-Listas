@@ -6,26 +6,25 @@ struct Ponto {
     double x, y;
 };
 
-double CalcDis(double x1, double y1, double x2, double y2){
-    double dis = sqrt( ((x2-x1)*(x2-x1)) + ((y2-y1)*(y2-y1)) );
+double CalcDis(Ponto p1, Ponto p2){
+    double dis = sqrt( ((p2.x-p1.x)*(p2.x-p1.x)) + ((p2.y-p1.y)*(p2.y-p1.y)) );
     return dis;
 };
 
 int main(){
-    double pX, pY, dis, last = 100000;
+    double dis, last = 100000;
     int n;
-    Ponto pIni;
-    Ponto pProx;
+    Ponto pIni,p2,pProx;
 
     cin >> pIni.x >> pIni.y;
     cin >> n;
     for(int i =0; i < n; i++){
-        cin >> pX >> pY;
-        dis = CalcDis(pIni.x, pIni.y, pX, pY);
+        cin >> p2.x >> p2.y;
+        dis = CalcDis(pIni, p2);
         //cout << dis << " DISTANCIA" << endl;
         if(dis < last){
-            pProx.x = pX;
-            pProx.y = pY;
+            pProx.x = p2.x;
+            pProx.y = p2.y;
             last = dis;
         }
     }
